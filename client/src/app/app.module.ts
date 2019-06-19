@@ -13,6 +13,10 @@ import { HostResultComponent } from './host/host-result.component';
 import { RegisterResultComponent } from './register/register-result.component';
 import { GuestResultComponent } from './guest/guest-result.component';
 import { GuestSearchComponent } from './guest/guest-search.component';
+import { HostAddComponent } from './host/host-add.component';
+import { HostEditComponent } from './host/host-edit.component';
+import { GuestAddComponent } from './guest/guest-add.component';
+import { GuestEditComponent } from './guest/guest-edit.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,11 @@ import { GuestSearchComponent } from './guest/guest-search.component';
     HostResultComponent,
     RegisterResultComponent,
     GuestResultComponent,
-    GuestSearchComponent
+    GuestSearchComponent,
+    HostAddComponent,
+    HostEditComponent,
+    GuestAddComponent,
+    GuestEditComponent
   ],
   imports: [
     BrowserModule,
