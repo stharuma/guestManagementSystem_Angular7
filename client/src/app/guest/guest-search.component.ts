@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-guest-search',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GuestSearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router: Router) { }
 
   ngOnInit() {
   }
-
+  getGuests(formData) {
+    this._router.navigate(['/guest-result'], { queryParams: {'inputName': formData.inputName, 'inputAddress': formData.inputAddress, 'inputEmail': formData.inputEmail, 'inputPhone': formData.inputPhone}});
+  }
 }
