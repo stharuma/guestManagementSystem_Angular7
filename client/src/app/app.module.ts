@@ -1,46 +1,54 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+//import {ScrollDispatchModule} from '@angular/cdk/scrolling';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header.component';
 import { FooterComponent } from './shared/footer.component';
-import { LoginComponent } from './shared/login.component';
 import { AboutusComponent } from './shared/aboutus.component';
+import { LoginComponent } from './shared/login.component';
 import { SignupComponent } from './shared/signup.component';
-import { HostSearchComponent } from './host/host-search.component';
-import { HostResultComponent } from './host/host-result.component';
-import { RegisterResultComponent } from './register/register-result.component';
-import { GuestResultComponent } from './guest/guest-result.component';
-import { GuestSearchComponent } from './guest/guest-search.component';
-import { HostAddComponent } from './host/host-add.component';
-import { HostEditComponent } from './host/host-edit.component';
 import { GuestAddComponent } from './guest/guest-add.component';
 import { GuestEditComponent } from './guest/guest-edit.component';
+import { GuestSearchComponent } from './guest/guest-search.component';
+import { GuestResultComponent } from './guest/guest-result.component';
+import { HostResultComponent } from './host/host-result.component';
+import { HostSearchComponent } from './host/host-search.component';
+import { HostAddComponent } from './host/host-add.component';
+import { HostEditComponent } from './host/host-edit.component';
+import { RegisterResultComponent } from './register/register-result.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent,
     AboutusComponent,
+    LoginComponent,
     SignupComponent,
-    HostSearchComponent,
-    HostResultComponent,
-    RegisterResultComponent,
-    GuestResultComponent,
+    GuestAddComponent,
+    GuestEditComponent,
     GuestSearchComponent,
+    GuestResultComponent,
+    HostResultComponent,
+    HostSearchComponent,
     HostAddComponent,
     HostEditComponent,
-    GuestAddComponent,
-    GuestEditComponent
+    RegisterResultComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+   // ScrollDispatchModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
