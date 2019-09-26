@@ -1,5 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+var path= require('path');
+
 const app = express();
 
 // store config variables in dotenv
@@ -26,7 +28,11 @@ app.use(cors({
 }));
  */
 // ****** allow cross-origin requests code END ****** //
+app.use(bodyParser.json());
 
+//static files
+app.use(express.static(path.join(__dirname,'public')));
+    
 // set all routes
 app.use('/api',route);
 app.use('/', (req, res) => res.send("Welcome Visitor Management App User !"));
