@@ -32,8 +32,10 @@ app.use(bodyParser.json());
 
 //static files
 app.use(express.static(path.join(__dirname,'public')));
-    
+app.get('*', (req, res) => res.sendFile(path.join(__dirname,'public/index.html')));
+   
 // set all routes
 app.use('/api',route);
-app.use('/', (req, res) => res.send("Welcome Visitor Management App User !"));
-app.listen(process.env.PORT, () => console.log('Elish Enterprise Server is ready on localhost:' + process.env.PORT));
+//app.use('/', (req, res) => res.send("Welcome Visitor Management App User !"));
+const port = process.env.PORT||8080;
+app.listen(port, () => console.log('Elish Enterprise Server is ready on localhost:' + process.env.PORT));

@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
+const Contact = require('../models/contact');
 const router = express.Router();
 
 var dbFunctions = require('../models/connector');
@@ -98,6 +98,39 @@ router.post('/setregister', jsonParser, function (req, res) {
     //if(valFunctions.checkInputDataQuality(req,res)) return false;
     if(valFunctions.checkJWTToken(req,res)) return false;
     dbFunctions.setRegister(req,res);
+});
+
+// contact Api temp
+
+router.get('/contacts', (req, res, next)=>{
+    Contact.find((err, contacts)=>{
+      res.json(contacts);
+    });
+});
+
+router.post('/contacts', (req, res, next)=>{
+    var newContact = new Contact({
+      first_name : req.body.first_name,
+      last_name : req.body.last_name,
+      phone : req.body.phone
+    });
+    newContact.save((err, contact)=>{
+        if(err){
+            res.json({msg:"Failed to add contact"});   
+        }else{
+            res.json({msg:"Contact added successfully"});
+        }
+    })
+});
+
+router.delete('/contacts/:id', (req, res, next)=>{
+   Contact.remove({_id: req.params.id}, (err, result)=>{
+       if(err){
+           res.json(err);
+       }else {
+        res.json(result);
+       }
+   });
 });
 
 module.exports= router;

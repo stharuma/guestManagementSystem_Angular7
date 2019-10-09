@@ -43,7 +43,7 @@ export class BackendService {
 
     let token = localStorage.getItem('token') ? localStorage.getItem('token') : "abcd";
     let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'token': token }) };
-    return this._http.post("http://localhost:3000/api/login", formData, httpOptions);
+    return this._http.post("api/login", formData, httpOptions);
 
   }
 
@@ -77,7 +77,7 @@ export class BackendService {
 
     let token = localStorage.getItem('token') ? localStorage.getItem('token') : "abcd";
     let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'token': token }) };
-    return this._http.post("http://localhost:3000/api/signup", formData, httpOptions);
+    return this._http.post("api/signup", formData, httpOptions);
 
   }
 
@@ -103,7 +103,7 @@ export class BackendService {
 
     let token = localStorage.getItem('token') ? localStorage.getItem('token') : "abcd";
     let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'token': token }) };
-    return this._http.post("http://localhost:3000/api/sethost", formData, httpOptions);
+    return this._http.post("api/sethost", formData, httpOptions);
 
   }
 
@@ -135,7 +135,7 @@ export class BackendService {
 
     let token = localStorage.getItem('token') ? localStorage.getItem('token') : "abcd";
     let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'token': token }) };
-    return this._http.post("http://localhost:3000/api/gethost", formData, httpOptions);
+    return this._http.post("api/gethost", formData, httpOptions);
 
   }
   updateHost(formData) {
@@ -160,7 +160,7 @@ export class BackendService {
 
     let token = localStorage.getItem('token') ? localStorage.getItem('token') : "abcd";
     let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'token': token }) };
-    return this._http.post("http://localhost:3000/api/updatehost", formData, httpOptions);
+    return this._http.post("api/updatehost", formData, httpOptions);
 
   }
   deleteHost(formData) {
@@ -189,7 +189,7 @@ export class BackendService {
 
     let token = localStorage.getItem('token') ? localStorage.getItem('token') : "abcd";
     let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'token': token }) };
-    return this._http.post("http://localhost:3000/api/deletehost", formData, httpOptions);
+    return this._http.post("api/deletehost", formData, httpOptions);
 
   }
   getHosts(formData) {
@@ -238,7 +238,7 @@ export class BackendService {
 
     let token = localStorage.getItem('token') ? localStorage.getItem('token') : "abcd";
     let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'token': token }) };
-    return this._http.post("http://localhost:3000/api/gethosts", formData, httpOptions);
+    return this._http.post("api/gethosts", formData, httpOptions);
 
   }
   setGuest(formData) {
@@ -263,7 +263,7 @@ export class BackendService {
 
     let token = localStorage.getItem('token') ? localStorage.getItem('token') : "abcd";
     let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'token': token }) };
-    return this._http.post("http://localhost:3000/api/setguest", formData, httpOptions);
+    return this._http.post("api/setguest", formData, httpOptions);
 
   }
 
@@ -295,7 +295,7 @@ export class BackendService {
 
     let token = localStorage.getItem('token') ? localStorage.getItem('token') : "abcd";
     let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'token': token }) };
-    return this._http.post("http://localhost:3000/api/getguest", formData, httpOptions);
+    return this._http.post("api/getguest", formData, httpOptions);
 
   }
   updateGuest(formData) {
@@ -320,7 +320,7 @@ export class BackendService {
 
     let token = localStorage.getItem('token') ? localStorage.getItem('token') : "abcd";
     let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'token': token }) };
-    return this._http.post("http://localhost:3000/api/updateguest", formData, httpOptions);
+    return this._http.post("api/updateguest", formData, httpOptions);
 
   }
   deleteGuest(formData) {
@@ -349,7 +349,7 @@ export class BackendService {
 
     let token = localStorage.getItem('token') ? localStorage.getItem('token') : "abcd";
     let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'token': token }) };
-    return this._http.post("http://localhost:3000/api/deleteguest", formData, httpOptions);
+    return this._http.post("api/deleteguest", formData, httpOptions);
 
   }
   getGuests(formData) {
@@ -398,7 +398,7 @@ export class BackendService {
 
     let token = localStorage.getItem('token') ? localStorage.getItem('token') : "abcd";
     let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'token': token }) };
-    return this._http.post("http://localhost:3000/api/getguests", formData, httpOptions);
+    return this._http.post("api/getguests", formData, httpOptions);
 
   }
   setCheckIn(hostId, hostName, guestId, guestName) {
@@ -433,7 +433,7 @@ export class BackendService {
 
     let token = localStorage.getItem('token') ? localStorage.getItem('token') : "abcd";
     let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'token': token }) };
-    return this._http.post("http://localhost:3000/api/setregister", formData, httpOptions);
+    return this._http.post("api/setregister", formData, httpOptions);
 
   }
   getRegister(formData) {
@@ -482,7 +482,7 @@ export class BackendService {
 
     let token = localStorage.getItem('token') ? localStorage.getItem('token') : "abcd";
     let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'token': token }) };
-    return this._http.post("http://localhost:3000/api/getregister", formData, httpOptions);
+    return this._http.post("api/getregister", formData, httpOptions);
 
   }
 }
