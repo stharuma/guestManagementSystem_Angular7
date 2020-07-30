@@ -20,6 +20,7 @@ $ ng new project-name
 $ cd project-name
 $ ng serve
 
+
 Back end :-
 $ cd server
 $ npm init
